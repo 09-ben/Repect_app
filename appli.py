@@ -69,11 +69,11 @@ elif page == pages[2] :
     st.write ("Profile_Report")
     Report = st.radio("Choisir le rapport :", ["Paludisme", "Mortalité maternelle"])
     if Report == "Paludisme":
-        with open ("Profile_report/output_projetDT_malaria.html", "r", encoding="utf-8") as f:
+        with open ("output_projetDT_malaria.html", "r", encoding="utf-8") as f:
             report_html = f.read()
         components.html(report_html, height=800, scrolling=True)
     else :
-        with open ("Profile_report/output_projetDt_mort.html", "r", encoding="utf-8") as f:
+        with open ("output_projetDt_mort.html", "r", encoding="utf-8") as f:
             P_report_html = f.read()
         components.html(P_report_html, height=800, scrolling=True)
 
