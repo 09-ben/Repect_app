@@ -10,8 +10,6 @@ import streamlit.components.v1 as components  # ouvrir les docs html
 st.title ("Analyse de la situation sanitaire en           Afrique de l'Ouest")
 
 # --- Chargement des données ---
-df = ("appli_streamlit/Data/incidence-of-malaria.csv")
-dt = ("appli_streamlit/Data/mat-mortality.csv")
 df = pd.read_csv(
     "incidence-of-malaria.csv"
 )
