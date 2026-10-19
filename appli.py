@@ -12,17 +12,32 @@ st.title ("Analyse de la situation sanitaire en           Afrique de l'Ouest")
 # --- Chargement des données ---
 df = ("appli_streamlit/Data/incidence-of-malaria.csv")
 dt = ("appli_streamlit/Data/mat-mortality.csv")
+df = pd.read_csv(
+    "incidence-of-malaria.csv"
+)
+dt = pd.read_csv(
+    "mat-mortality.csv"
+)
 
 # --- La Sidebar  ---
 
 st.sidebar.title ("Sommaire")
-pages = ["Contexte du Projet 3", "Objectifs", "Exploration des DTsets", "Analyse Univariée", "Analyse Bivariée", "Download CSV"]
+pages = [
+    "Contexte du Projet 3", 
+    "Objectifs", 
+    "Exploration des DTsets", 
+    "Analyse Univariée", 
+    "Analyse Bivariée", 
+    "Download CSV"]
+
 page = st.sidebar.radio ("Aller à la pages :", pages)
 
 if page == pages[0] :
     st.write ("#** Contexte du projet**")
-    st.image("image.png", caption="Santé", use_container_width=True)
-
+    st.image("image.png", 
+             caption="Santé", 
+             use_container_width=True)
+    
     st.write ("L'Afrique de l'Ouest est l'une des régions du monde les plus touchées par les maladies évitables, notamment le paludisme et les complications liées à la grossesse. Le Sénégal, comme de nombreux pays de la sous-région, doit faire face à des défis sanitaires importants malgré les progrès réalisés au cours des deux dernières décennies.")
     st.write ("Les décideurs publics, les ONG de santé et les agents de terrain disposent rarement d'outils visuels accessibles pour suivre l'évolution des indicateurs sanitaires clés (incidence du paludisme, taux de mortalité maternelle, couverture vaccinale) au fil du temps et selon les régions. L'absence de visualisation claire ralentit la prise de décision.")
     st.write ("Le paludisme représente encore une des premières causes de mortalité infantile en Afrique subsaharienne. La mortalité maternelle reste élevée dans les zones rurales faute de suivi et d'anticipation. Des données bien visualisées permettent d'orienter les ressources là où elles sont le plus nécessaires.")
